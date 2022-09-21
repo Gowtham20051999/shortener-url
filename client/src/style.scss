@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+@mixin res($bp) {
+  @if $bp == md {
+    @media screen and (min-width: 768px) {
+      @content;
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  background: #272c34;
+  margin: 0;
+}
+
+.app {
+  position: relative;
+  min-height: 100vh;
+}
+
+.header {
+  font-family: 'Fredoka One', cursive;
+  padding: 12px 32px;
+  display: flex;
+  justify-content: space-between;
+
+  &__left {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+
+    a {
+      color: #fff;
+    }
+  }
+}
+
+.title {
+  font-weight: 900;
+  font-size: 2em;
+  color: #fff;
+}
+
+.footer {
+  width: 100%;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__link {
+    margin-left: 8px !important;
+    color: orange !important;
+    cursor: pointer;
+  }
+}
+
+.container {
+  padding: 16px;
+  border-radius: 16px;
+  min-height: calc(100vh - 139px);
+
+  @include res(md) {
+    padding-top: 120px;
+  }
+}
+
+.links {
+  padding: 16px;
+  border-radius: 4px;
+  color: #272c34;
+  background: #ffffff;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include res(md) {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+      flex-grow: 1;
+    }
+
+    a {
+      padding: 16px 0;
+      text-decoration: none;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+      color: #2a5bd7 !important;
+
+      @include res(md) {
+        padding: 0 32px;
+      }
+    }
+
+    button {
+      min-width: 90px;
+    }
+  }
+}
+
+.shorten {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__input {
+    > div {
+      background: #fff;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .shorten {
+    flex-direction: row;
+
+    &__btn {
+      align-self: stretch;
+      margin-left: 16px !important;
+      min-width: 120px !important;
+    }
+  }
+}
+
+.mt-32 {
+  margin-top: 32px !important;
+}
+
+.mb-16 {
+  margin-bottom: 16px !important;
+}
+
+.ml-16 {
+  margin-left: 16px !important;
+}
+
+.mr-16 {
+  margin-right: 16px !important;
+}
+
+.mx-8 {
+  margin-right: 8px !important;
+  margin-left: 8px !important;
+}
+
+.color-orange {
+  color: orange !important;
+}
+
+.color-blue {
+  color: #33bfff !important;
+}
